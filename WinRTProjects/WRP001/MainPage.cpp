@@ -11,6 +11,7 @@ namespace winrt::WRP001::implementation
     {
         InitializeComponent();
         persona = Persona();
+        ContentFrame().Navigate(xaml_typename<WRP001::Home>());            
     }
 
     int32_t MainPage::MyProperty()
@@ -22,21 +23,27 @@ namespace winrt::WRP001::implementation
     {
         throw hresult_not_implemented();
     }
-    void MainPage::setValuesClick(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args)
+         
+    void MainPage::btn_MenuOnClick(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e)
     {
-        persona.setName(winrt::to_string(lbl_setNombre().Text()));
-        persona.setSurname(winrt::to_string(lbl_setApellido().Text()));
-
-        lbl_getNombre().Text(L"-");
-        lbl_getApellido().Text(L"-");
-
+        SplitMenu().IsPaneOpen(!SplitMenu().IsPaneOpen());        
     }
-    void MainPage::getValuesClick(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args)
-    {
-        lbl_setNombre().Text(L"-");
-        lbl_setApellido().Text(L"-");
 
-        lbl_getNombre().Text(winrt::to_hstring(persona.getName()));
-        lbl_getApellido().Text(winrt::to_hstring(persona.getSurname()));
-    }    
+    void MainPage::btn_HomeOnClick(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e)
+    {
+        ContentFrame().Navigate(xaml_typename<WRP001::Home>());
+    }
+
+    void MainPage::btn_ConfigOnClick(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e)
+    {
+        ContentFrame().Navigate(xaml_typename<WRP001::Config>());
+    }
+
+    void MainPage::btn_AboutOnClick(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e)
+    {
+        ContentFrame().Navigate(xaml_typename<WRP001::About>());
+    }
 }
+
+
+

@@ -1,0 +1,9 @@
+namespace WRP001
+{
+    [default_interface]
+    runtimeclass About : Windows.UI.Xaml.Controls.Page
+    {
+        About();
+        Int32 MyProperty;
+    }
+}

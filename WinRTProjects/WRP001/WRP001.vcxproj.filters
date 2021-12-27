@@ -5,6 +5,15 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml" />
+    <Page Include="Home.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Config.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="About.xaml">
+      <Filter>Screens</Filter>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl" />
@@ -50,6 +59,9 @@
   <ItemGroup>
     <Filter Include="Assets">
       <UniqueIdentifier>{e48dc53e-40b1-40cb-970a-f89935452892}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screens">
+      <UniqueIdentifier>{06431cdd-a2d9-42b4-9da3-90dc81e5e452}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
